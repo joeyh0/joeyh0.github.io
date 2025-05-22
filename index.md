@@ -17,9 +17,9 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 
   Wet Loose avalanches occur as a result of some form of external factor weakening the snow’s surface and resulting in a large amount of snow falling down a slope. It is important to note that this often requires steep elevation since a larger slope makes it easier for the snow to lose cohesion and start tumbling. Also, these avalanches are typically as a result of warmer temperatures, which explains why they started to make a meaningful appearance starting around springtime.
 
-  Upon understanding the avalanche types of interest, we can see that there are particular variables that have potential to act as a trigger to these avalanche incidents. Slab avalanches, while often started by human weight, are supported by wind-compacted snow and can also be started by factors like precipitation adding pressure onto the slabs where humans may not, or elevation accentuating the previous two factors. Wet Loose avalanches on the other hand can find issues in any factor that may cause snow to lose cohesion, like radiation and higher temperatures. Moving forward, I will look to analyze the effects of precipitation, surface solar radiation downwards (SSRD), temperature, wind magnitudes *, and elevation affect the occurrence of an avalanche. 
+  Upon understanding the avalanche types of interest, we can see that there are particular variables that have potential to act as a trigger to these avalanche incidents. Slab avalanches, while often started by human weight, are supported by wind-compacted snow and can also be started by factors like precipitation adding pressure onto the slabs where humans may not, or elevation accentuating the previous two factors. Wet Loose avalanches on the other hand can find issues in any factor that may cause snow to lose cohesion, like radiation and higher temperatures. Moving forward, I will look to analyze the effects of precipitation, surface solar radiation downwards (SSRD), temperature, wind magnitudes*, and elevation affect the occurrence of an avalanche. 
 
-  * text here
+  *obtained by squaring magnitudes of wind in both directions, adding them, and taking the square root of the result.
 
 ### <ins>Weather Data Organization</ins>
   
