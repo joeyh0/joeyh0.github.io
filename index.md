@@ -19,7 +19,7 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 
   Upon understanding the avalanche types of interest, we can see that there are particular variables that have potential to act as a trigger to these avalanche incidents. Slab avalanches, while often started by human weight, are supported by wind-compacted snow and can also be started by factors like precipitation adding pressure onto the slabs where humans may not, or elevation accentuating the previous two factors. Wet Loose avalanches on the other hand can find issues in any factor that may cause snow to lose cohesion, like radiation and higher temperatures. Moving forward, I will look to analyze the effects of precipitation, surface solar radiation downwards (SSRD), temperature, wind magnitudes*, and elevation affect the occurrence of an avalanche. 
 
-  *obtained by squaring magnitudes of wind in both directions, adding them, and taking the square root of the result.
+  *<small>obtained by squaring magnitudes of wind in both directions, adding them, and taking the square root of the result.</small>
 
 ### <ins>Weather Data Organization</ins>
   
