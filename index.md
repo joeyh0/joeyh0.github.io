@@ -4,5 +4,5 @@ Every year, approximately 27 people die from an avalanche in the United States, 
   To attempt this feat, we are going to take a look at Colorado, a state that occupies a third of the avalanche incidents in the United States. Colorado models an environment that simultaneously is avalanche-prone and contains a wide range of varying weather conditions. They have high-elevation areas, an acceptable amount of precipitation, and an erratic amount of wind. The Colorado Avalanche Information Center also offers freely available data on each reported avalanche sighting for the past ~70 years, with details on their locations, avalanche type, date, and more. We can use this data alongside external weather data to try to predict and visualize why these avalanches are occurring. 
 
   There are several types of avalanches that each have certain conditions that exemplifies their potential as a threat. I was interested in understanding which avalanche types are most relevant and whether they change throughout the season: 
-  
-![Avalanche Proportion](/Users/joey/Downloads/aval_prop.png)
+
+![Avalanche Proportion](aval_prop.png)
