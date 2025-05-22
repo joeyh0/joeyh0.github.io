@@ -46,5 +46,5 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 
 
 
-[^1]: Statistics and reporting. Colorado Avalanche Information Center. (n.d.). https://avalanche.state.co.us/accidents/statistics-and-reporting#:~:text=Avalanche%20Accident%20Statistics,Public%20%2D%20Please%20cite%20the%20CAIC. 
-[^2]: Avalanche.org " Avalanche encyclopedia. Avalanche.org. (2019, December 18). https://avalanche.org/avalanche-encyclopedia/#avalanche 
+[^1]: Statistics and reporting. Colorado Avalanche Information Center. (n.d.). [https://avalanche.state.co.us/accidents/statistics-and-reporting#:~:text=Avalanche%20Accident%20Statistics,Public%20%2D%20Please%20cite%20the%20CAIC.](https://avalanche.state.co.us/accidents/statistics-and-reporting#:~:text=Avalanche%20Accident%20Statistics,Public%20%2D%20Please%20cite%20the%20CAIC.) 
+[^2]: Avalanche.org " Avalanche encyclopedia. Avalanche.org. (2019, December 18). [https://avalanche.org/avalanche-encyclopedia/#avalanche](https://avalanche.org/avalanche-encyclopedia/#avalanche) 
