@@ -19,7 +19,22 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 
   Upon understanding the avalanche types of interest, we can see that there are particular variables that have potential to act as a trigger to these avalanche incidents. Slab avalanches, while often started by human weight, are supported by wind-compacted snow and can also be started by factors like precipitation adding pressure onto the slabs where humans may not, or elevation accentuating the previous two factors. Wet Loose avalanches on the other hand can find issues in any factor that may cause snow to lose cohesion, like radiation and higher temperatures. Moving forward, I will look to analyze the effects of precipitation, surface solar radiation downwards (SSRD), temperature, wind magnitudes, and elevation affect the occurrence of an avalanche. 
 
-<ins>Weather Data Organization</ins>
+### <ins>Weather Data Organization</ins>
   
   I have obtained data on the first four variables from the European Centre for Medium-Range Weather Forecasts (ECMWF). For example, below is a map of precipitation measured across February 1st, 2025 in Washington.
  
+![Precipitation Map](precip.png)
+
+  Notably this data is split into cells spanning .25x.25 degrees of longitude and latitude. This is the case for every variable recorded by the ECMWF, but not for the elevation. The elevation data was obtained by a DEM (Digital Elevation Model) by OpenTopography. However, this data was composed with much higher resolution and smaller cells, but which was quickly resolved by taking the mean of all cells within the original bounds of each cell from the ECMWF data. 
+
+### <ins>Building a Logistic Model</ins>
+
+  When building a regression model, I first had to decide what constitutes an “observation” within our data. On instinct, it feels like a day should be an observation, although that would require us to aggregate data across each cell, which would result in messy representations of variables like elevation, which would stay stagnant and in an unfit middle-area. So instead, I decided to use each cell as an observation, determining how these variables determine avalanche occurrence by seeing the variables and number of avalanches in each individual cell.
+
+  I practiced this initially over a few days but immediately found an issue. With the observations covering every region in Colorado (including ones with low elevation), elevation ended up being a dominant determinant of avalanche occurrence since all of the avalanches occurred in high elevation regions where they only could. To combat this, I decided to look at all the cells where an avalanche had occurred in the CAIC dataset (Nov24 - Apr25), and subset those cells along with all cells surrounding those. This way, I was only modeling off of regions where an avalanche could actually reasonably occur. I also decided to aggregate the data by week to avoid any specific day biases which may occur considering that the CAIC data was purely collected by human record, implying that days where people are outdoors more with have an unproportionate amount of avalanche sightings. Additionally, many individual days would have little to none avalanche sightings, causing highly variable predictor coefficients since it would  often be predicting off of nothing.
+
+  With this new data set up, I repeated my logistic regression fitting and repeated it across each week in the avalanche sighting data for each avalanche type. I plotted the change of the coefficients and p-values over each predictor below.
+
+![coef_chart](coefficient_change.png)
+
+![pval_chart](pval_change.png)
