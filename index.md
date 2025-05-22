@@ -1,5 +1,5 @@
 # Predicting Avalanche Incidents in Colorado
-Every year, approximately 27 people die from an avalanche in the United States, with hundreds more being non-fatally buried and likely many going unreported. In regions that pose high risks of avalanches, this threat is more prevalent than any other natural event. If we could analyze the conditions that lead up to an avalanche occurrence, we can attempt to predict regions where an avalanche is imminent and issue warnings before another incident takes place.
+Every year, approximately 27 people die from an avalanche in the United States, with hundreds more being non-fatally buried and likely many going unreported.[^1] In regions that pose high risks of avalanches, this threat is more prevalent than any other natural event. If we could analyze the conditions that lead up to an avalanche occurrence, we can attempt to predict regions where an avalanche is imminent and issue warnings before another incident takes place.
 
   To attempt this feat, we are going to take a look at Colorado, a state that occupies a third of the avalanche incidents in the United States. Colorado models an environment that simultaneously is avalanche-prone and contains a wide range of varying weather conditions. They have high-elevation areas, an acceptable amount of precipitation, and an erratic amount of wind. The Colorado Avalanche Information Center also offers freely available data on each reported avalanche sighting for the past ~70 years, with details on their locations, avalanche type, date, and more. We can use this data alongside external weather data to try to predict and visualize why these avalanches are occurring. 
 
@@ -9,11 +9,11 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 
   Through this graph, we can see that Colorado experiences a steady level of mostly Soft Slab (SS) avalanches and a lower amount of Hard Slab (HS) avalanches through the winter. However, starting around in April, the proportion of Wet Loose (WL) avalanches started to spike as Spring arrived. Moving forward, I will only consider these three avalanche types during analysis, given that they compose an overwhelming proportion of the avalanche incidents in the data. But knowing the difference between these avalanche types is crucial in getting the full picture of why this may have happened.
 
-  <ins>Slab Avalanches:</ins>
+  **Slab Avalanches:**[^2]
 
   Slab avalanches occur when a large “slab” of compacted snow is separated from the ground or other snow. While this is often triggered by added weight by a person, it is also notably primed by wind compacting the snow together, and can be triggered by various external factors as well. Soft and hard slab avalanches are differentiated by the quality of the compacted snow that the avalanche was composed of. Soft slab avalanches are typically low density and vice versa.
 
-  <ins>Wet Loose Avalanches:</ins>
+  **Wet Loose Avalanches:**[^2]
 
   Wet Loose avalanches occur as a result of some form of external factor weakening the snow’s surface and resulting in a large amount of snow falling down a slope. It is important to note that this often requires steep elevation since a larger slope makes it easier for the snow to lose cohesion and start tumbling. Also, these avalanches are typically as a result of warmer temperatures, which explains why they started to make a meaningful appearance starting around springtime.
 
@@ -38,3 +38,11 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 ![coef_chart](coefficient_change.png)
 
 ![pval_chart](pval_change.png)
+
+### <ins>Assessing the Results</ins>
+
+
+
+
+[^1]: Statistics and reporting. Statistics and Reporting | Colorado Avalanche Information Center. (n.d.). https://avalanche.state.co.us/accidents/statistics-and-reporting#:~:text=Avalanche%20Accident%20Statistics,Public%20%2D%20Please%20cite%20the%20CAIC. 
+[^2]: Avalanche.org " Avalanche encyclopedia. Avalanche.org. (2019, December 18). https://avalanche.org/avalanche-encyclopedia/#avalanche 
