@@ -29,7 +29,7 @@ Every year, approximately 27 people die from an avalanche in the United States, 
   
   - Temperature at 2m (K)
   
-  - Wind Magnitude (m/s)
+  - Wind Magnitude (m/s)*
   
   - Elevation (m)
 
