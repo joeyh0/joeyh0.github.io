@@ -47,7 +47,7 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 
   My predictive model now has the main components I need. First my predictors, or my variables of interest. Second, what I’m trying to predict, an avalanche incident. I found there seemed to be a range of around 0-4 avalanches per day so I decided to proceed instead with a logistic regression. In this case, my response variable is a binary variable determining whether an avalanche occurred whatsoever at all (1 for yes, 0 for no).
 
-
+![Regression Model](Regression_Model.png)
 
   When building a regression model, I had to decide what constitutes an “observation” within our data. On instinct, it feels like a day should be an observation, although that would require us to aggregate data across each cell, which would result in messy representations of variables like elevation, which would stay stagnant and in an unfit middle-area. So instead, I decided to use each cell as an observation, determining how these variables determine avalanche occurrence by seeing the variables and number of avalanches in each individual cell.
 
@@ -59,9 +59,7 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 
   With this new data set up, I repeated my logistic regression fitting and repeated it across each week in the avalanche sighting data for each avalanche type. I plotted the change of the coefficients and p-values over each predictor below.
 
-![coef_chart](coefficient_change.png)
 
-![pval_chart](pval_change.png)
 
 ### <ins>Assessing the Results</ins>
 
