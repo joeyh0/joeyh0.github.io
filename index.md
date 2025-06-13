@@ -22,11 +22,16 @@ Every year, approximately 27 people die from an avalanche in the United States, 
   Upon understanding the avalanche types of interest, we can see that there are particular variables that have potential to act as a trigger to these avalanche incidents. Slab avalanches, while often started by human weight, are supported by wind-compacted snow and can also be started by factors like precipitation adding pressure onto the slabs where humans may not, or elevation accentuating the previous two factors. Wet Loose avalanches on the other hand can find issues in any factor that may cause snow to lose cohesion, like radiation and higher temperatures. 
 
   Moving forward, I will look to obtain some of these “tells” to act as my predictor variables in my regression model moving forward. In particular I will select the following variables:
-  Precipitation (m)
-  Surface Solar Radiation Downwards (SSRD) (J/m^2)
-  Temperature at 2m (K)
-  Wind Magnitude (m/s)
-  Elevation (m)
+  
+  - Precipitation (m)
+  
+  - Surface Solar Radiation Downwards (SSRD) (J/m^2)
+  
+  - Temperature at 2m (K)
+  
+  - Wind Magnitude (m/s)
+  
+  - Elevation (m)
 
   *<small>obtained by squaring magnitudes of wind in both directions, adding them, and taking the square root of the result.</small>
 
