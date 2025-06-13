@@ -45,9 +45,17 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 
 ### <ins>Building a Logistic Model</ins>
 
-  When building a regression model, I first had to decide what constitutes an “observation” within our data. On instinct, it feels like a day should be an observation, although that would require us to aggregate data across each cell, which would result in messy representations of variables like elevation, which would stay stagnant and in an unfit middle-area. So instead, I decided to use each cell as an observation, determining how these variables determine avalanche occurrence by seeing the variables and number of avalanches in each individual cell.
+  My predictive model now has the main components I need. First my predictors, or my variables of interest. Second, what I’m trying to predict, an avalanche incident. I found there seemed to be a range of around 0-4 avalanches per day so I decided to proceed instead with a logistic regression. In this case, my response variable is a binary variable determining whether an avalanche occurred whatsoever at all (1 for yes, 0 for no).
 
-  I practiced this initially over a few days but immediately found an issue. With the observations covering every region in Colorado (including ones with low elevation), elevation ended up being a dominant determinant of avalanche occurrence since all of the avalanches occurred in high elevation regions where they only could. To combat this, I decided to look at all the cells where an avalanche had occurred in the CAIC dataset (Nov24 - Apr25), and subset those cells along with all cells surrounding those. This way, I was only modeling off of regions where an avalanche could actually reasonably occur. I also decided to aggregate the data by week to avoid any specific day biases which may occur considering that the CAIC data was purely collected by human record, implying that days where people are outdoors more with have an unproportionate amount of avalanche sightings. Additionally, many individual days would have little to none avalanche sightings, causing highly variable predictor coefficients since it would  often be predicting off of nothing.
+
+
+  When building a regression model, I had to decide what constitutes an “observation” within our data. On instinct, it feels like a day should be an observation, although that would require us to aggregate data across each cell, which would result in messy representations of variables like elevation, which would stay stagnant and in an unfit middle-area. So instead, I decided to use each cell as an observation, determining how these variables determine avalanche occurrence by seeing the variables and number of avalanches in each individual cell.
+
+  I practiced this initially over a few days but immediately found an issue. With the observations covering every region in Colorado (including ones with low elevation), elevation ended up being a dominant determinant of avalanche occurrence since all of the avalanches occurred in high elevation regions where they only could. To combat this, I decided to look at all the cells where an avalanche had occurred in the CAIC dataset (Nov24 - May25), and subset those cells along with all cells surrounding those. 
+
+
+
+  This way, I was only modeling off of regions where an avalanche could actually reasonably occur. I also decided to aggregate the data by week to avoid any specific day biases which may occur considering that the CAIC data was purely collected by human record, implying that days where people are outdoors more with have an unproportionate amount of avalanche sightings. Additionally, many individual days would have little to none avalanche sightings, causing highly variable predictor coefficients since it would  often be predicting off of nothing.
 
   With this new data set up, I repeated my logistic regression fitting and repeated it across each week in the avalanche sighting data for each avalanche type. I plotted the change of the coefficients and p-values over each predictor below.
 
@@ -57,6 +65,27 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 
 ### <ins>Assessing the Results</ins>
 
+  So how do we make sense of this onslaught of data? First I’d like to look at a few notable trends.
+
+
+
+  Notably, there was a stretch of ~4 months where temperature consistently saw low p-values. This may indicate that temperature may have a greater impact on an avalanche occurrence than the other variables. In particular, considering this time region is in that transitioning phase between Winter and Spring, the CAIC may see sudden temperature hikes around that time as a potential indicator of where a slab avalanche may occur in a region.
+
+
+
+  We can see a somewhat similar trend with both radiation downwards (SSRD) and elevation across the same time frame but to a lower extent. While we could take this information as another sign of a potential sign of weaker correlations, I think it also showcases potential errors in my analysis.
+
+### <ins>What could’ve been improved / Potential Error</ins>
+
+  In the previous graph and the one below, we can see that the temperature radiation predictors both show very similar p-values. This confronted me with the question of what are these two predictors really telling me? In reality, solar radiation downwards and temperature are really just two different ways of representing the same thing, the climate and heat in the region. This exposes the multicollinearity in my regression design, as these two variables are essentially creating a positive feedback loop with each other, and resulting in overconfidence in how impactful these variables may be. 
+
+
+
+  Another potential limitation of my model is the range of values I’m working with, especially noticeable with temperature. Considering my goal is to make a convincing argument that a change in a variable has an effect on a potential avalanche occurrence, I would want to work with dramatically different values of said variable to view how the response changes with big differences in the predictors. In my Wet Loose avalanche model, which was limited down to the past 3 months, I likely had a fairly low range of temperatures to analyze from, weakening my ability to draw a certain conclusion on how extreme temperatures in either direction affects avalanche occurrence.
+
+  There are a couple potential fundamental limitations to my model that would have setbacks that are difficult to track. For one, my system of splitting Colorado into cells assumes independence amongst each cell. In reality, weather conditions in one region are very much nuanced and affected by its surroundings, and this spatial dependence is not captured in my system. The potential side-effect of this is once again overconfidence in variables, which may suggest that my p-values are to some extent lower than they should be.
+
+  Hypothesis testing also has a small chance of having type I errors, or false positives. While in small quantities of repeated testing, this potential can be negligible, I conducted over 1500 hypothesis testing across this project. Even if a small proportion of them are false positives, there are likely a much larger amount than I would like that can cause any amount of unpredictability with my later regression models.
 
 
 
