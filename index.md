@@ -53,23 +53,25 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 
   I practiced this initially over a few days but immediately found an issue. With the observations covering every region in Colorado (including ones with low elevation), elevation ended up being a dominant determinant of avalanche occurrence since all of the avalanches occurred in high elevation regions where they only could. To combat this, I decided to look at all the cells where an avalanche had occurred in the CAIC dataset (Nov24 - May25), and subset those cells along with all cells surrounding those. 
 
-
+![Cell System](Grid_Selection.png)
 
   This way, I was only modeling off of regions where an avalanche could actually reasonably occur. I also decided to aggregate the data by week to avoid any specific day biases which may occur considering that the CAIC data was purely collected by human record, implying that days where people are outdoors more with have an unproportionate amount of avalanche sightings. Additionally, many individual days would have little to none avalanche sightings, causing highly variable predictor coefficients since it would  often be predicting off of nothing.
 
   With this new data set up, I repeated my logistic regression fitting and repeated it across each week in the avalanche sighting data for each avalanche type. I plotted the change of the coefficients and p-values over each predictor below.
 
+![P-Value Change](pvalues_change.png)
 
+![Wet Loose Change](WetLoose_Change.png)
 
 ### <ins>Assessing the Results</ins>
 
   So how do we make sense of this onslaught of data? First I’d like to look at a few notable trends.
 
-
+![Temp Change](Temp_Change.png)
 
   Notably, there was a stretch of ~4 months where temperature consistently saw low p-values. This may indicate that temperature may have a greater impact on an avalanche occurrence than the other variables. In particular, considering this time region is in that transitioning phase between Winter and Spring, the CAIC may see sudden temperature hikes around that time as a potential indicator of where a slab avalanche may occur in a region.
 
-
+![Change](change.png)
 
   We can see a somewhat similar trend with both radiation downwards (SSRD) and elevation across the same time frame but to a lower extent. While we could take this information as another sign of a potential sign of weaker correlations, I think it also showcases potential errors in my analysis.
 
