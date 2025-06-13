@@ -1,5 +1,5 @@
 # Predicting Avalanche Incidents in Colorado
-Every year, approximately 27 people die from an avalanche in the United States, with hundreds more being non-fatally buried and likely many going unreported. In regions that pose high risks of avalanches, this threat is more prevalent than any other natural event. The Colorado Avalanche Information Center (CAIC) compiles these incidents and creates routine reports of avalanche danger risks across Colorado. Based on this analysis, they also respond to potential threats in regions through breaking down snow slabs or shutting down roads. However, they need to be able to look at forecasting data to predict which regions are of highest incoming danger to decide where to allocate their resources and time. If we could analyze the conditions that lead up to an avalanche occurrence, we can attempt to predict regions where an avalanche is imminent and issue warnings before another incident takes place. 
+Every year, approximately 27 people die from an avalanche in the United States, with hundreds more being non-fatally buried and likely many going unreported. In regions that pose high risks of avalanches, this threat is more prevalent than any other natural event. The Colorado Avalanche Information Center (CAIC) compiles these incidents and creates routine reports of avalanche danger risks across Colorado. Based on this analysis, they also respond to potential threats in regions through breaking down snow slabs or shutting down roads.[^1] However, they need to be able to look at forecasting data to predict which regions are of highest incoming danger to decide where to allocate their resources and time. If we could analyze the conditions that lead up to an avalanche occurrence, we can attempt to predict regions where an avalanche is imminent and issue warnings before another incident takes place. 
 
 
   Colorado fits the perfect mold to attempt this feat, being a state that occupies a third of the avalanche incidents in the United States. Colorado also models an environment that simultaneously is avalanche-prone and contains a wide range of varying weather conditions. They have high-elevation areas, an acceptable amount of precipitation, and an erratic amount of wind. The Colorado Avalanche Information Center also offers freely available data on each reported avalanche sighting for the past ~70 years, with details on their locations, avalanche type, date, and more. We can use this data alongside external weather/topographical data to try to predict and visualize why these avalanches are occurring. 
@@ -65,9 +65,7 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 
 ### <ins>Assessing the Results</ins>
 
-  So how do we make sense of this onslaught of data? First I’d like to look at a few notable trends.
-
-![Temp Change](Temp_Change.png)
+  So how do we make sense of this onslaught of data? First I’d like to look at a notable trend.
 
   Notably, there was a stretch of ~4 months where temperature consistently saw low p-values. This may indicate that temperature may have a greater impact on an avalanche occurrence than the other variables. In particular, considering this time region is in that transitioning phase between Winter and Spring, the CAIC may see sudden temperature hikes around that time as a potential indicator of where a slab avalanche may occur in a region.
 
@@ -79,7 +77,7 @@ Every year, approximately 27 people die from an avalanche in the United States, 
 
   In the previous graph and the one below, we can see that the temperature radiation predictors both show very similar p-values. This confronted me with the question of what are these two predictors really telling me? In reality, solar radiation downwards and temperature are really just two different ways of representing the same thing, the climate and heat in the region. This exposes the multicollinearity in my regression design, as these two variables are essentially creating a positive feedback loop with each other, and resulting in overconfidence in how impactful these variables may be. 
 
-
+![Change](change_2.2.png)
 
   Another potential limitation of my model is the range of values I’m working with, especially noticeable with temperature. Considering my goal is to make a convincing argument that a change in a variable has an effect on a potential avalanche occurrence, I would want to work with dramatically different values of said variable to view how the response changes with big differences in the predictors. In my Wet Loose avalanche model, which was limited down to the past 3 months, I likely had a fairly low range of temperatures to analyze from, weakening my ability to draw a certain conclusion on how extreme temperatures in either direction affects avalanche occurrence.
 
