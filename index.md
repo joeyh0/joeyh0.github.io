@@ -1,16 +1,3 @@
----
-title: Tutorial title
-shortTitle: <subject> # Max 31 characters
-intro: 'Article intro. See tips for a great intro below'
-product: "{{ optional product callout }}"
-type: tutorial
-topics:
-  - <topic> # One or more from list of allowed topics: https://github.com/github/docs/blob/main/data/allowed-topics.js
-versions:
-  - <version>
----
-
-
  # Predicting Avalanche Incidents in Colorado
 Every year, approximately 27 people die from an avalanche in the United States, with hundreds more being non-fatally buried and likely many going unreported. In regions that pose high risks of avalanches, this threat is more prevalent than any other natural event. The Colorado Avalanche Information Center (CAIC) compiles these incidents and creates routine reports of avalanche danger risks across Colorado. Based on this analysis, they also respond to potential threats in regions through breaking down snow slabs or shutting down roads.[^1] However, they need to be able to look at forecasting data to predict which regions are of highest incoming danger to decide where to allocate their resources and time. If we could analyze the conditions that lead up to an avalanche occurrence, we can attempt to predict regions where an avalanche is imminent and issue warnings before another incident takes place. 
 
